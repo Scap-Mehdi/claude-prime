@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>À propos — claude-prime</title>
+  <meta name="description" content="À propos du projet claude-prime : son objectif, son contenu et son auteur.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <a href="index.html">Accueil</a>
+      <a href="about.html" aria-current="page">À propos</a>
+    </nav>
+    <h1>À propos</h1>
+    <p>L'histoire et l'objectif du projet claude-prime.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Le projet</h2>
+      <p>claude-prime est un site statique publié avec GitHub Pages. Il sert de point de départ pour apprendre à construire et publier des pages web simples, sans framework ni outil de build.</p>
+    </section>
+
+    <section>
+      <h2>Comment c'est fait</h2>
+      <ul>
+        <li>Du HTML et du CSS purs, sans dépendance.</li>
+        <li>Un thème clair et un thème sombre, choisis selon les préférences du navigateur.</li>
+        <li>Un hébergement gratuit via GitHub Pages.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Le code source est disponible sur <a href="https://github.com/Scap-Mehdi/claude-prime">GitHub</a>. Ouvrez une issue pour toute question ou suggestion.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> claude-prime</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

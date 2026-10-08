@@ -36,6 +36,25 @@ body {
   background: var(--surface);
 }
 
+.nav {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.nav a {
+  color: var(--muted);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav a:hover,
+.nav a:focus-visible,
+.nav a[aria-current="page"] {
+  color: var(--accent);
+}
+
 .hero h1 {
   margin: 0 0 0.5rem;
   font-size: clamp(2rem, 6vw, 3.5rem);
