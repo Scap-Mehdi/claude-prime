@@ -5,12 +5,13 @@
   "compatibility_date": "2026-10-01",
   "workers_dev": true,
 
-  // Bucket R2 qui contient les fiches et les commentaires. Créez-le avant le premier déploiement.
+  // Bucket R2 des fiches et commentaires, créé dans la juridiction Union européenne (données de stagiaires).
   "r2_buckets": [
-    { "binding": "OUTILS", "bucket_name": "claude-prime-outils" }
+    { "binding": "OUTILS", "bucket_name": "claude-prime-outils", "jurisdiction": "eu" }
   ],
 
-  // Recommandé : un domaine personnalisé sur une zone Cloudflare, pour protéger seulement /edition/* avec Access.
+  // Adresse : claude-prime-api.<sous-domaine>.workers.dev, protégée en entier par Cloudflare Access.
+  // Plus tard, un domaine personnalisé permettra de ne protéger que /edition/* :
   // "routes": [{ "pattern": "outils-api.example.fr", "custom_domain": true }],
 
   "vars": {
