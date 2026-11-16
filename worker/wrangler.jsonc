@@ -1,0 +1,26 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "claude-prime-api",
+  "main": "index.js",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+
+  // Bucket R2 qui contient les fiches et les commentaires. Créez-le avant le premier déploiement.
+  "r2_buckets": [
+    { "binding": "OUTILS", "bucket_name": "claude-prime-outils" }
+  ],
+
+  // Recommandé : un domaine personnalisé sur une zone Cloudflare, pour protéger seulement /edition/* avec Access.
+  // "routes": [{ "pattern": "outils-api.example.fr", "custom_domain": true }],
+
+  "vars": {
+    // Origine autorisée à lire /api/* depuis un navigateur.
+    "ORIGINE_PUBLIQUE": "https://scap-mehdi.github.io",
+    // Dossier publié par GitHub Pages. Le Worker y lit outils.html pour /edition/outils.html.
+    "PAGE_SOURCE": "https://scap-mehdi.github.io/claude-prime/",
+    // Cloudflare Access. Vides : toute modification est refusée (503).
+    // Ce ne sont pas des secrets : le domaine d'équipe et l'AUD identifient l'application Access.
+    "ACCESS_TEAM_DOMAIN": "",
+    "ACCESS_AUD": ""
+  }
+}
