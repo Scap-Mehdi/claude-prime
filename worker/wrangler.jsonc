@@ -1,5 +1,5 @@
 {
-  // Déployé par Cloudflare Workers Builds à chaque push sur main (dossier worker, build : npm ci).
+  // Déployé par Cloudflare Workers Builds à chaque push sur main (chemin : worker, build : npm ci, déploiement : npx wrangler deploy).
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "claude-prime-api",
   "main": "index.js",
