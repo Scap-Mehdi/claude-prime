@@ -46,6 +46,7 @@ test('GitHub Pages sans Worker : liste d\'origine, filtres intacts, modification
   const w = await ouvrir(PAGES, { avecJeton: false });
   const d = w.document;
   assert.match(d.querySelector('#edition-info').textContent, /Lecture seule/);
+  assert.equal(d.querySelector('#edition-info a').href, 'https://claude-prime-api.scap.workers.dev/edition/outils.html');
   assert.equal(d.querySelectorAll('article').length, 68);
   assert.ok([...d.querySelectorAll('.actions button')].every((b) => b.disabled));
   assert.equal(d.querySelectorAll('.actions button').length, 136);

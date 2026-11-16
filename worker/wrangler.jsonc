@@ -20,9 +20,9 @@
     "ORIGINE_PUBLIQUE": "https://scap-mehdi.github.io",
     // Dossier publié par GitHub Pages. Le Worker y lit outils.html pour /edition/outils.html.
     "PAGE_SOURCE": "https://scap-mehdi.github.io/claude-prime/",
-    // Cloudflare Access. Vides : toute modification est refusée (503).
+    // Cloudflare Access de l'application claude-prime-api.scap.workers.dev. Vides : toute modification est refusée (503).
     // Ce ne sont pas des secrets : le domaine d'équipe et l'AUD identifient l'application Access.
-    "ACCESS_TEAM_DOMAIN": "",
-    "ACCESS_AUD": ""
+    "ACCESS_TEAM_DOMAIN": "delicate-silence-620b.cloudflareaccess.com",
+    "ACCESS_AUD": "613611f5ed91468c7a04766eddd4442b85b9b6cdc9f3636301e665ee06c7aa38"
   }
 }
