@@ -5,6 +5,7 @@ Mon premier projet claude-prime. Il contient une page web statique, prête à ê
 ## Contenu
 
 - `index.html` : la page d'accueil.
+- `outils.html` : l'annuaire des outils de vibecoding (68 outils, recherche et filtres par catégorie et par source). Page autonome, styles et script intégrés.
 - `style.css` : les styles, avec un thème clair et un thème sombre.
 - `.nojekyll` : demande à GitHub Pages de servir les fichiers tels quels.
 
