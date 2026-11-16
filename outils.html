@@ -88,6 +88,8 @@ filter();
 /* Fiches modifiables et commentaires, stockés dans R2 par le Worker claude-prime-api (dossier worker/). */
 // Adresse publique du Worker, sans barre finale. Vide : la page affiche la liste d'origine, sans données en ligne.
 const API_PUBLIQUE='';
+// Page d'édition protégée par Cloudflare Access, proposée en lien quand la lecture en ligne n'est pas disponible ici.
+const PAGE_EDITION='https://claude-prime-api.scap.workers.dev/edition/outils.html';
 const EN_EDITION=location.pathname.startsWith('/edition/');
 const BASE=EN_EDITION?location.origin:API_PUBLIQUE.replace(/\/+$/,'');
 const CATEGORIES=[...category.options].filter(o=>o.value).map(o=>o.value);
@@ -226,7 +228,7 @@ function appliquer(fiches,commentaires){
 
 for(const card of cards){const f=extraire(card);initiales.set(f.outilId,f);brancher(card);indexer(card,f)}
 (async()=>{
-  if(!BASE){annoncer('Lecture seule : la liste d\'origine est affichée. Le Worker de modification n\'est pas encore configuré.');return}
+  if(!BASE){if(PAGE_EDITION)annoncer('Lecture seule. Pour modifier une fiche ou commenter, ouvrez la version protégée :',PAGE_EDITION);else annoncer('Lecture seule : la liste d\'origine est affichée. Le Worker de modification n\'est pas encore configuré.');return}
   try{
     const[api,fiches,commentaires]=await Promise.all([appeler('GET','/api/etat'),appeler('GET','/api/fiches'),appeler('GET','/api/commentaires')]);
     appliquer(fiches.fiches,commentaires.commentaires);
